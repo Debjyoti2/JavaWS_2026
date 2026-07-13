@@ -1,4 +1,4 @@
-package com.thread.virtual_thread;
+package thread.virtual_thread;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;

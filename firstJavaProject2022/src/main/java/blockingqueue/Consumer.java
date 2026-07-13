@@ -1,4 +1,4 @@
-package com.blockingqueue;
+package blockingqueue;
 
 import java.util.concurrent.BlockingQueue;
 
