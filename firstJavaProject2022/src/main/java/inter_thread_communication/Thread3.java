@@ -1,4 +1,4 @@
-package com.inter_thread_communication;
+package inter_thread_communication;
 
 public class Thread3 implements Runnable{
 
