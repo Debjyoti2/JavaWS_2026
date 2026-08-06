@@ -1,4 +1,4 @@
-package com.internal.working;
+package internal.working;
 
 public class ArrayList_internal_working {
 	
