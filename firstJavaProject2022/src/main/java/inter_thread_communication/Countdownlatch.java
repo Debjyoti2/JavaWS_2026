@@ -12,7 +12,7 @@ public class Countdownlatch {
         new Thread(()->startService("CacheService",latch)).start();
         new Thread(()->startService("QueueService",latch)).start();
         try {
-            latch.await();
+            latch.await();  //main thread will wait until all services are started
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

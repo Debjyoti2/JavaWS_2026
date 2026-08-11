@@ -1,10 +1,12 @@
 package com.java8.functional_interface;
 
+import java8.functional_interface.CalculateFI;
+
 public class Main {
 
 	public static void main(String[] args) {
 
-		CalculateFI<Integer,Integer,Integer> sum = (p,q)->p+q;
+		CalculateFI<Integer,Integer,Integer> sum = (p, q)->p+q;
 		int sumn = sum.calculate(10, 30);
 		System.out.println("sumn :: " + sumn);
 		

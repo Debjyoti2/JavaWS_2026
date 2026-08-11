@@ -1,4 +1,4 @@
-package com.iteratorvslistiterator;
+package iteratorvslistiterator;
 
 public class Notes {
 	

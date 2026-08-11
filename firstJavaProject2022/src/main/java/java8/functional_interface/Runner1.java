@@ -1,5 +1,7 @@
 package com.java8.functional_interface;
 
+import java8.functional_interface.FunctionalInterface1;
+
 public class Runner1 {
 	
 	public static void main(String[] args) {
