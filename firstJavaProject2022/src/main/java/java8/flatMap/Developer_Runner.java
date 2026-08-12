@@ -1,4 +1,6 @@
-package com.java8.flatMap;
+package java8.flatMap;
+
+import java8.flatMap.Developer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,7 +66,10 @@ public class Developer_Runner {
 			System.out.println("Char is :: " + map.getKey() + " Count Is :: " + map.getValue());
 		}
 		
-		
+		countMap.entrySet().stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		System.out.println("countMap :: " + countMap);
+
+
 		//using java 1.8
 		List<String> strList = Arrays.asList(str.split(""));
 		Map<String,Long> countMap2 = strList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));

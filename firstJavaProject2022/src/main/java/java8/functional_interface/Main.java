@@ -1,4 +1,4 @@
-package com.java8.functional_interface;
+package java8.functional_interface;
 
 import java8.functional_interface.CalculateFI;
 

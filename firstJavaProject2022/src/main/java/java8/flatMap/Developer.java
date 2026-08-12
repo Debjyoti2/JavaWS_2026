@@ -1,4 +1,4 @@
-package com.java8.flatMap;
+package java8.flatMap;
 
 import java.util.HashSet;
 import java.util.Set;

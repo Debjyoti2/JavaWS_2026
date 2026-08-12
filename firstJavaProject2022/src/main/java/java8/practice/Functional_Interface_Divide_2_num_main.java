@@ -1,4 +1,6 @@
-package com.java8.practice;
+package java8.practice;
+
+import java8.practice.Functional_Interface_Divide_2_num;
 
 public class Functional_Interface_Divide_2_num_main {
 

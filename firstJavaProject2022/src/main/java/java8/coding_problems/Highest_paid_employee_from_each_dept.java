@@ -1,6 +1,6 @@
-package com.java8.coding_problems;
+package java8.coding_problems;
 
-import com.java8.Employee_3;
+import java8.Employee_3;
 
 import java.util.*;
 import java.util.stream.Collectors;

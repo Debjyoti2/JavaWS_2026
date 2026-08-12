@@ -1,4 +1,4 @@
-package com.java8.functional_interface_and_anonymus_class_and_lambda;
+package java8.functional_interface_and_anonymus_class_and_lambda;
 
 public class MainClass {
 	

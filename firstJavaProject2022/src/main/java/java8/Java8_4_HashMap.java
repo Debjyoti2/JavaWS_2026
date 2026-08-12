@@ -1,7 +1,7 @@
-package com.java8;
+package java8;
 
-import com.java8.ExternalDepo;
-import com.java8.InvoiceComponent;
+import java8.ExternalDepo;
+import java8.InvoiceComponent;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

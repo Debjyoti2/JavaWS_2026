@@ -1,5 +1,8 @@
-package com.java8.in28Min.Course;
+package java8.in28Min.Course;
 
+import java8.in28Min.Course.Course;
+
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
@@ -58,6 +61,13 @@ public class Practice2 {
 		//sum of stud having rating >3
 		Integer sumOfStud= courseList.stream().filter(e->e.getReviewScore()>3).map(e->e.getNoOfStudents()).reduce(0,(e1,e2)->e1+e2);
 		System.out.println("sum Of Stud is :: " + sumOfStud);
+
+		Integer totalStud = courseList.stream().filter(e->e.getReviewScore()>3).map(e->e.getNoOfStudents())
+				.reduce(0,(e1,e2)->e1+e2);
+
+		courseList.stream().sorted(Comparator.comparing(Course::getReviewScore)).collect(Collectors.toList());
+		courseList.stream().max((e1,e2)-> Integer.compare(e1.getNoOfStudents(),e2.getNoOfStudents())).get();
+		courseList.stream().map(Course::getNoOfStudents).reduce(0,(e1,e2)->e1+e2);
 		
 
 	}

@@ -1,4 +1,6 @@
-package com.java8.practice;
+package java8.practice;
+
+import java8.practice.Functional_Interface_Add_2_Num;
 
 public class Functional_Interface_Add_2_Num_Runner {
 

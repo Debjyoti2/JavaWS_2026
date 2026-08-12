@@ -1,4 +1,4 @@
-package com.java8.java8datetime;
+package java8.java8datetime;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

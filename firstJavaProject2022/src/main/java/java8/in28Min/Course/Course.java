@@ -1,4 +1,4 @@
-package com.java8.in28Min.Course;
+package java8.in28Min.Course;
 
 public class Course {
 	

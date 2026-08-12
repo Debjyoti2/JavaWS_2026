@@ -1,6 +1,7 @@
 package com.java8.functional_interface;
 
 import java8.functional_interface.FunctionalInterface1;
+import java8.functional_interface.FunctionalInterface3;
 
 public class Runner1 {
 	
@@ -22,6 +23,11 @@ public class Runner1 {
 		//same using lamdba expression
 		FunctionalInterface1 fi2 = (x,y)->x*y; 
 		System.out.println(fi.multiply2Num(1, 2));
+
+
+		FunctionalInterface3 fi3 = (a,b) -> a+b;
+		System.out.println(fi3.add2Number(5,5));
+
 	}
 
 }
