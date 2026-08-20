@@ -75,7 +75,8 @@ public class TestJava8 {
 		Employee_3 maxSalObj = empList.stream().max((e1,e2)-> Integer.compare(e1.getSalary(),e2.getSalary())).get();
 		System.out.println("maxSalObj is :: " + maxSalObj);
 		empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary()));
-		
+
+		empList.stream().max((e1,e2)-> Integer.compare(e1.getSalary(),e2.getSalary())).get().getSalary();
 		Integer maxsal  = empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
 		
 		Integer maxsal3 = empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
@@ -100,6 +101,7 @@ public class TestJava8 {
 		
 		myList.stream().max((e1,e2)->Integer.compare(e1,e2)).get();
 
+		//Palash 7450865696
 		
 		//Intermediate operations?  
 			 //Filter (Predicate FI)

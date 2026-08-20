@@ -1,4 +1,6 @@
-package com.java8;
+package java8;
+
+import java8.in28Min.Course.Course;
 
 import java.util.Comparator;
 

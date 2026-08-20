@@ -1,4 +1,7 @@
-package com.java8;
+package java8;
+
+import java8.Player;
+import java8.Team;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,4 +1,6 @@
-package com.java8;
+package java8;
+
+import java8.Player;
 
 import java.util.ArrayList;
 import java.util.List;

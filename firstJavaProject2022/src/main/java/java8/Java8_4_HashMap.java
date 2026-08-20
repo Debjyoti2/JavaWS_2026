@@ -97,6 +97,8 @@ public class Java8_4_HashMap {
 		}else {
 			System.out.println("Maps are not same !!! ");
 		}
+
+		componentMap.entrySet().stream().allMatch(e->e.getValue().equals(externalDepoMap.get(e.getKey())));
 		
 	}
 
