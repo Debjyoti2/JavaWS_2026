@@ -1,4 +1,4 @@
-package com.practice;
+package practice;
 
 public class Static_Block_In_A_Class {
 	

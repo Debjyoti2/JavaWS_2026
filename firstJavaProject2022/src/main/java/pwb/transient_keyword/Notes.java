@@ -1,4 +1,4 @@
-package com.pwb.transient_keyword;
+package pwb.transient_keyword;
 
 public class Notes {
 	
@@ -16,6 +16,7 @@ public class Notes {
 	r serialized file ta ke tule de-serialize korbe.
 	
 	tai eta diye jvm chk kore kon file ta ke dezerialize korbo.. , serialversionuid same na hole exception diye dbe
+
 	
 	
 	

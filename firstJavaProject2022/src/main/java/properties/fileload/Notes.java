@@ -1,4 +1,4 @@
-package com.properties.fileload;
+package properties.fileload;
 
 import java.io.File;
 import java.io.FileInputStream;

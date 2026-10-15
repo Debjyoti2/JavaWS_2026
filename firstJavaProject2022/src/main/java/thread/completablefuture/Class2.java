@@ -1,4 +1,4 @@
-package com.thread.completablefuture;
+package thread.completablefuture;
 
 import java.time.LocalDateTime;
 import java.util.concurrent.CompletableFuture;

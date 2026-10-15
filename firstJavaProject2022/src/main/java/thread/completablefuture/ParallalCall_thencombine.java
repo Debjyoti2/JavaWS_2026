@@ -1,8 +1,12 @@
-package com.thread.completablefuture;
+package thread.completablefuture;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class ParallalCall_thencombine {
 
@@ -24,16 +28,32 @@ public class ParallalCall_thencombine {
 
 		System.out.println("Start :: " + LocalDateTime.now());
 
-		// if we do normal sync call
-		
-//		System.out.println("Start :: " + LocalDateTime.now());
-//
-//		String hello = obj.hello();
-//		String world = obj.world();
-//		String result2 = hello + world;
-//		System.out.println("Result :: " + result2);
-//
-//		System.out.println("Start :: " + LocalDateTime.now());
+
+		//CompletableFuture
+
+		CompletableFuture.supplyAsync(()->getUserData())
+				.thenApply(users-> enrichUser(users))
+				.thenAccept(users->savetoDb(users));
+
+	}
+
+	public static List<String> getUserData() {
+
+		List<String> users = new ArrayList<>();
+		users.add("DEBJ");
+		users.add("ROHIT");
+		return users;
+
+	}
+
+	public static List<String> enrichUser(List<String> users) {
+		List<String> usersModified = new ArrayList<>();
+		usersModified = users.stream().map(user->user.toLowerCase().concat(" :: Title")).collect(Collectors.toList());
+		return usersModified;
+	}
+
+	public static void savetoDb(List<String> users){
+		users.stream().forEach(e->System.out.println("Saved to DB :: " + e));
 	}
 
 	public String hello() {
@@ -55,5 +75,9 @@ public class ParallalCall_thencombine {
 		return "World";
 
 	}
+
+
+
+
 
 }

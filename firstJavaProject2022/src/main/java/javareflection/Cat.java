@@ -1,4 +1,4 @@
-package com.javareflection;
+package javareflection;
 
 public class Cat {
 

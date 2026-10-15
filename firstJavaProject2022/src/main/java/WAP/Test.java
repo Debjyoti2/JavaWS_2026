@@ -1,12 +1,9 @@
-package com.WAP;
+package WAP;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Test {
 
@@ -95,6 +92,24 @@ public class Test {
 	      Set<Integer> duplicates = new HashSet<>();
 	      intList2.stream().filter(e->!duplicates.add(e)).collect(Collectors.toList());
 	      System.out.println("Duplicates :: " + duplicates);
+
+
+		String str = "abbaeae";
+		List<String> palindromesubstr = new ArrayList<>();
+		for(int i=0;i<str.length();i++){
+			for(int j=i;j<str.length();j++){
+				String substrtemp= str.substring(i,j);
+				if(isPalindrome2(substrtemp)){
+					palindromesubstr.add(substrtemp);
+				}
+			}
+		}
+		System.out.println("Palindromesubstrings :: " + palindromesubstr);
+
 		
+	}
+
+	public static boolean isPalindrome2(String str) {
+       return str.equalsIgnoreCase(new StringBuilder(str).reverse().toString());
 	}
 }

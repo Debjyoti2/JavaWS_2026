@@ -19,8 +19,13 @@ public class TestJava8 {
 		empList.add(new Employee_3(105, "bob", 103, "active",3500));
 		empList.add(new Employee_3(106, "alice", 103, "inactive",3500));
 		empList.add(new Employee_3(107, "srine", 104, "active",3500));
-		
-		
+
+
+		//group emplist by dept and sum of sal
+		Map<Integer,Double> deptSalMap =empList.stream().collect(Collectors.groupingBy(e->e.getDeptId(),
+				Collectors.summingDouble(e->e.getSalary())));
+		System.out.println("deptSalMap :: " +deptSalMap);
+
 		//sorting emp based on salary
 		List<Employee_3> empListsorted1 = empList.stream().sorted(Comparator.comparing(Employee_3::getSalary)).collect(Collectors.toList());
 		System.out.println("empListsorted1 :: " +empListsorted1);

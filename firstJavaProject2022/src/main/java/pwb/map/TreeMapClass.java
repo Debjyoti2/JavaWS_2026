@@ -1,4 +1,4 @@
-package com.pwb.map;
+package pwb.map;
 
 import java.util.Map;
 import java.util.NavigableMap;

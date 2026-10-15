@@ -8,6 +8,10 @@ public class Test {
 
     static void main() throws InterruptedException {
 
+        Thread thw = new Thread(()->{
+            System.out.println("edfhjdfh");
+        });
+
         //Pattern 1 Of Creating Thread from Java 8
         Thread th1 = new Thread(()->{
             System.out.println("Pattern 1 Of Creating Thread");
@@ -48,6 +52,26 @@ public class Test {
         executorService1.execute(()->{
             System.out.println("Creating Virtual Thread using ExecutorService");
         });
+
+
+
+        Thread v1 = Thread.startVirtualThread(()->{
+            System.out.println("AAA");
+        });
+
+        Thread v2 = Thread.ofVirtual().unstarted(()->{
+            System.out.println("BBB");
+        });
+        v2.start();
+
+        Thread v3 = Thread.ofVirtual().start(()->{
+            System.out.println("CCC");
+        });
+
+        v1.join();
+        v2.join();
+        v3.join();
+
 
 
     }

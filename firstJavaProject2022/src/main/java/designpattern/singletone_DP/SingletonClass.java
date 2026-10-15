@@ -1,4 +1,4 @@
-package com.designpattern.singletone_DP;
+package designpattern.singletone_DP;
 
 public class SingletonClass {
 	

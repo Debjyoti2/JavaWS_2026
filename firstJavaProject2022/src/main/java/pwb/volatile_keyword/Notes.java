@@ -1,4 +1,4 @@
-package com.pwb.volatile_keyword;
+package pwb.volatile_keyword;
 
 public class Notes {
 	
