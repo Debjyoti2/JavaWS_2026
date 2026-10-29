@@ -8,41 +8,41 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+import static com.pwb.synchronized_keyword.ThreadRunner.i;
+
 public class DataProcessing {
 
     static void main() {
 
-
-        List<User> users = new ArrayList<>();
-        //Let say there are 1 Lakh users inside this arraylist.
-        //We need to enrich each user with credit score.
-
-        //add 1000000  users to the list for demo
-        for (int i = 0; i < 1000000; i++) {
-            users.add(new User(i, "User" + i, "user" + i + "@gmail.com"));
-        }
-
-
-        List<List<User>> batches = new ArrayList<>();
-        int batchsize=10000;
-        for(int i=0;i<batchsize;i+=batchsize){
-            var batch = users.subList(i, i+batchsize);
-            batches.add(batch);
-        }
-
-
-        for(int i=0;i<batches.size();i++){
-            List<EnrichedUser> enrichedUsers = processBatch(batches.get(i));
-            System.out.println("enrichedUsers :: " + enrichedUsers);
-        }
+        Long deptId= 1L;
+        processUsers(deptId);
 
     }
 
+
+   //@Transactional
+   public static void processUsers(Long deptId){
+
+        int start =0;
+        int pageSize = 500;
+        Page<User> userPage;
+
+        do{
+            orderPage = orderRepository.findAll(PageRequest.of(start,pageSize));
+            orderPage.getContent().forEach(users->{
+                processBatch(users);
+            });
+            entityManager.clear();//unload 500 data from JVM memory.
+            page++;
+        }while(orderPage.hasNext());
+
+   }
 
     public static List<EnrichedUser> processBatch(List<User> users) {
         try(var executor = Executors.newVirtualThreadPerTaskExecutor()){
            List<Future<EnrichedUser>> enrichUsers =users.stream().map(user->
                 executor.submit(()-> enrichUser(user))).toList();
+       // 500 users are coming here, each user is processed in a separate  virtual thread
 
            return enrichUsers.stream().map(e-> {
                try {
